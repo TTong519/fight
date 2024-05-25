@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace fight
 {
-    internal class Cat : fighter
+    public class Cat : fighter
     {
-        public Cat(string name, int health, int defence, int attack, int speed, int agility)
+        bool isinfected;
+        public Cat(string name, int health, int defence, int attack, int speed, int agility, bool isinfected)
             : base(name, health, defence, attack, speed, agility)
         {
-            
+            this.isinfected = isinfected;
         }
 
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace fight
 {
-    internal class Doge : fighter
+    public class Doge : fighter
     {
         bool hasRabies;
         public Doge(string name, int health, int defence, int attack, int speed, int agility, bool hasRabies)
