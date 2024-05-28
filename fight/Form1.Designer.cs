@@ -31,26 +31,26 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBox1 = new PictureBox();
-            panel1 = new Panel();
+            DogMoves = new Panel();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
             pictureBox2 = new PictureBox();
-            panel2 = new Panel();
+            CatMoves = new Panel();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
             label1 = new Label();
             label2 = new Label();
             panel3 = new Panel();
+            CatHealth = new ProgressBar();
+            DogHealth = new ProgressBar();
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            progressBar1 = new ProgressBar();
-            progressBar2 = new ProgressBar();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            DogMoves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel2.SuspendLayout();
+            CatMoves.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,15 +64,15 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // panel1
+            // DogMoves
             // 
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(645, 350);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(155, 100);
-            panel1.TabIndex = 1;
+            DogMoves.Controls.Add(button3);
+            DogMoves.Controls.Add(button2);
+            DogMoves.Controls.Add(button1);
+            DogMoves.Location = new Point(645, 350);
+            DogMoves.Name = "DogMoves";
+            DogMoves.Size = new Size(155, 100);
+            DogMoves.TabIndex = 1;
             // 
             // button3
             // 
@@ -111,15 +111,15 @@
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
-            // panel2
+            // CatMoves
             // 
-            panel2.Controls.Add(button4);
-            panel2.Controls.Add(button5);
-            panel2.Controls.Add(button6);
-            panel2.Location = new Point(0, 1);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(155, 100);
-            panel2.TabIndex = 5;
+            CatMoves.Controls.Add(button4);
+            CatMoves.Controls.Add(button5);
+            CatMoves.Controls.Add(button6);
+            CatMoves.Location = new Point(0, 1);
+            CatMoves.Name = "CatMoves";
+            CatMoves.Size = new Size(155, 100);
+            CatMoves.TabIndex = 5;
             // 
             // button4
             // 
@@ -170,19 +170,35 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(progressBar2);
-            panel3.Controls.Add(progressBar1);
+            panel3.Controls.Add(CatHealth);
+            panel3.Controls.Add(DogHealth);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(label2);
-            panel3.Controls.Add(panel2);
+            panel3.Controls.Add(CatMoves);
             panel3.Controls.Add(pictureBox2);
-            panel3.Controls.Add(panel1);
+            panel3.Controls.Add(DogMoves);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(800, 450);
             panel3.TabIndex = 8;
+            // 
+            // CatHealth
+            // 
+            CatHealth.Location = new Point(522, 158);
+            CatHealth.Name = "CatHealth";
+            CatHealth.Size = new Size(278, 23);
+            CatHealth.TabIndex = 9;
+            CatHealth.Value = 100;
+            // 
+            // DogHealth
+            // 
+            DogHealth.Location = new Point(0, 230);
+            DogHealth.Name = "DogHealth";
+            DogHealth.Size = new Size(266, 23);
+            DogHealth.TabIndex = 8;
+            DogHealth.Value = 100;
             // 
             // label3
             // 
@@ -199,22 +215,6 @@
             timer1.Interval = 9;
             timer1.Tick += timer1_Tick;
             // 
-            // progressBar1
-            // 
-            progressBar1.Location = new Point(0, 230);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(266, 23);
-            progressBar1.TabIndex = 8;
-            progressBar1.Value = 100;
-            // 
-            // progressBar2
-            // 
-            progressBar2.Location = new Point(522, 158);
-            progressBar2.Name = "progressBar2";
-            progressBar2.Size = new Size(278, 23);
-            progressBar2.TabIndex = 9;
-            progressBar2.Value = 100;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -226,9 +226,9 @@
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
+            DogMoves.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel2.ResumeLayout(false);
+            CatMoves.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -238,12 +238,12 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Panel panel1;
+        private Panel DogMoves;
         private Button button3;
         private Button button2;
         private Button button1;
         private PictureBox pictureBox2;
-        private Panel panel2;
+        private Panel CatMoves;
         private Button button4;
         private Button button5;
         private Button button6;
@@ -252,7 +252,7 @@
         private Panel panel3;
         private Label label3;
         private System.Windows.Forms.Timer timer1;
-        private ProgressBar progressBar1;
-        private ProgressBar progressBar2;
+        private ProgressBar DogHealth;
+        private ProgressBar CatHealth;
     }
 }

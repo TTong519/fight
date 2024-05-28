@@ -12,7 +12,13 @@ namespace fight
 
             if(game.Turn == Turn.Dog)
             {
-
+               CatMoves.Enabled = false;
+               DogMoves.Enabled = true;
+            }
+            if(game.Turn == Turn.Cat)
+            {
+                CatMoves.Enabled = true;
+                DogMoves.Enabled = false;
             }
         }
 
