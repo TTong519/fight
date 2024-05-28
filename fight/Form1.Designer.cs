@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             button3 = new Button();
@@ -44,6 +45,8 @@
             panel3 = new Panel();
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            progressBar1 = new ProgressBar();
+            progressBar2 = new ProgressBar();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -53,9 +56,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(0, 288);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 250);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(200, 160);
+            pictureBox1.Size = new Size(266, 198);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -98,9 +103,11 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(600, 1);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(522, 1);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(200, 160);
+            pictureBox2.Size = new Size(278, 160);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
@@ -145,7 +152,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F);
-            label1.Location = new Point(75, 265);
+            label1.Location = new Point(114, 207);
             label1.Name = "label1";
             label1.Size = new Size(41, 20);
             label1.TabIndex = 6;
@@ -155,7 +162,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F);
-            label2.Location = new Point(686, 164);
+            label2.Location = new Point(645, 184);
             label2.Name = "label2";
             label2.Size = new Size(35, 20);
             label2.TabIndex = 7;
@@ -163,6 +170,8 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(progressBar2);
+            panel3.Controls.Add(progressBar1);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(label2);
@@ -189,6 +198,22 @@
             // 
             timer1.Interval = 9;
             timer1.Tick += timer1_Tick;
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(0, 230);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(266, 23);
+            progressBar1.TabIndex = 8;
+            progressBar1.Value = 100;
+            // 
+            // progressBar2
+            // 
+            progressBar2.Location = new Point(522, 158);
+            progressBar2.Name = "progressBar2";
+            progressBar2.Size = new Size(278, 23);
+            progressBar2.TabIndex = 9;
+            progressBar2.Value = 100;
             // 
             // Form1
             // 
@@ -227,5 +252,7 @@
         private Panel panel3;
         private Label label3;
         private System.Windows.Forms.Timer timer1;
+        private ProgressBar progressBar1;
+        private ProgressBar progressBar2;
     }
 }
