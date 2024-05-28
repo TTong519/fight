@@ -17,6 +17,10 @@ namespace fight
         public Turn Turn = Turn.Start;
         public Cat Cat1;
         public Doge Dog;
-
+        public Game(Cat cat, Doge dog)
+        {
+            Cat1 = cat;
+            Dog = dog;
+        }
     }
 }
