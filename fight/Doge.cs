@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace fight
 {
-    public class Doge : fighter
+    public class Doge : Fighter
     {
         public bool hasRabies;
         public bool isWin;
@@ -14,8 +14,7 @@ namespace fight
             : base(name, health, defence, attack, speed, agility)
         {
             this.hasRabies = hasRabies;
-            attacks[1] = new attack(30 + attack, "Bite", 10, 1, 2);
-            attacks[2]
+            attacks[1] = new Attack(30 + attack, "Bite", 10, 1, 2);
         }
     }
 }

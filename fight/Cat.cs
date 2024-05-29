@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace fight
 {
-    public class Cat : fighter
+    public class Cat : Fighter
     {
-        bool isinfected;
+        public bool isinfected;
         public Cat(string name, int health, int defence, int attack, int speed, int agility, bool isinfected)
             : base(name, health, defence, attack, speed, agility)
         {

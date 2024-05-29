@@ -32,13 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBox1 = new PictureBox();
             DogMoves = new Panel();
-            button3 = new Button();
-            button1 = new Button();
+            Run = new Button();
+            Growl = new Button();
+            Bite = new Button();
             pictureBox2 = new PictureBox();
             CatMoves = new Panel();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            Liquid = new Button();
+            Bite2 = new Button();
+            Scratch = new Button();
             label1 = new Label();
             label2 = new Label();
             panel3 = new Panel();
@@ -46,7 +47,6 @@
             DogHealth = new ProgressBar();
             Announcement = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DogMoves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -66,32 +66,41 @@
             // 
             // DogMoves
             // 
-            DogMoves.Controls.Add(button3);
-            DogMoves.Controls.Add(button2);
-            DogMoves.Controls.Add(button1);
+            DogMoves.Controls.Add(Run);
+            DogMoves.Controls.Add(Growl);
+            DogMoves.Controls.Add(Bite);
             DogMoves.Location = new Point(645, 350);
             DogMoves.Name = "DogMoves";
             DogMoves.Size = new Size(155, 100);
             DogMoves.TabIndex = 1;
             // 
-            // button3
+            // Run
             // 
-            button3.Location = new Point(41, 70);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 4;
-            button3.Text = "Run";
-            button3.UseVisualStyleBackColor = true;
+            Run.Location = new Point(41, 70);
+            Run.Name = "Run";
+            Run.Size = new Size(75, 23);
+            Run.TabIndex = 4;
+            Run.Text = "Run";
+            Run.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Growl
             // 
-            button1.Location = new Point(41, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Bite";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            Growl.Location = new Point(41, 41);
+            Growl.Name = "Growl";
+            Growl.Size = new Size(75, 23);
+            Growl.TabIndex = 3;
+            Growl.Text = "Growl";
+            Growl.UseVisualStyleBackColor = true;
+            // 
+            // Bite
+            // 
+            Bite.Location = new Point(41, 12);
+            Bite.Name = "Bite";
+            Bite.Size = new Size(75, 23);
+            Bite.TabIndex = 2;
+            Bite.Text = "Bite";
+            Bite.UseVisualStyleBackColor = true;
+            Bite.Click += button1_Click;
             // 
             // pictureBox2
             // 
@@ -105,40 +114,40 @@
             // 
             // CatMoves
             // 
-            CatMoves.Controls.Add(button4);
-            CatMoves.Controls.Add(button5);
-            CatMoves.Controls.Add(button6);
+            CatMoves.Controls.Add(Liquid);
+            CatMoves.Controls.Add(Bite2);
+            CatMoves.Controls.Add(Scratch);
             CatMoves.Location = new Point(0, 1);
             CatMoves.Name = "CatMoves";
             CatMoves.Size = new Size(155, 100);
             CatMoves.TabIndex = 5;
             // 
-            // button4
+            // Liquid
             // 
-            button4.Location = new Point(41, 70);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 4;
-            button4.Text = "Liquid";
-            button4.UseVisualStyleBackColor = true;
+            Liquid.Location = new Point(41, 70);
+            Liquid.Name = "Liquid";
+            Liquid.Size = new Size(75, 23);
+            Liquid.TabIndex = 4;
+            Liquid.Text = "Liquid";
+            Liquid.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // Bite2
             // 
-            button5.Location = new Point(41, 41);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 3;
-            button5.Text = "Bite";
-            button5.UseVisualStyleBackColor = true;
+            Bite2.Location = new Point(41, 41);
+            Bite2.Name = "Bite2";
+            Bite2.Size = new Size(75, 23);
+            Bite2.TabIndex = 3;
+            Bite2.Text = "Bite";
+            Bite2.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // Scratch
             // 
-            button6.Location = new Point(41, 12);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 2;
-            button6.Text = "Scratch";
-            button6.UseVisualStyleBackColor = true;
+            Scratch.Location = new Point(41, 12);
+            Scratch.Name = "Scratch";
+            Scratch.Size = new Size(75, 23);
+            Scratch.TabIndex = 2;
+            Scratch.Text = "Scratch";
+            Scratch.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -207,15 +216,6 @@
             timer1.Interval = 9;
             timer1.Tick += timer1_Tick;
             // 
-            // button2
-            // 
-            button2.Location = new Point(41, 41);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Growl";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -240,13 +240,13 @@
 
         private PictureBox pictureBox1;
         private Panel DogMoves;
-        private Button button3;
-        private Button button1;
+        private Button Run;
+        private Button Bite;
         private PictureBox pictureBox2;
         private Panel CatMoves;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button Liquid;
+        private Button Bite2;
+        private Button Scratch;
         private Label label1;
         private Label label2;
         private Panel panel3;
@@ -254,6 +254,6 @@
         private System.Windows.Forms.Timer timer1;
         private ProgressBar DogHealth;
         private ProgressBar CatHealth;
-        private Button button2;
+        private Button Growl;
     }
 }

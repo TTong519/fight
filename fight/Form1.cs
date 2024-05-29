@@ -40,6 +40,10 @@ namespace fight
             Doge Dog = new Doge("Dog", random.Next(21), random.Next(11), random.Next(11), random.Next(36), random.Next(11), temp);
             Cat cat = new Cat("Cat", random.Next(10), random.Next(6), random.Next(10), random.Next(41), random.Next(16), false);
             game = new Game(cat, Dog);
+            DogHealth.Maximum = game.Dog.health;
+            DogHealth.Value = game.Dog.health;
+            CatHealth.Maximum = game.Cat.health;
+            CatHealth.Value = game.Cat.health;
         }
 
         private void button1_Click(object sender, EventArgs e)

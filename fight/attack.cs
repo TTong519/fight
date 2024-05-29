@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace fight
 {
-    public class attack
+    public class Attack
     {
         public string name;
         public int damage;
         int energymax;
         int energyRegen;
         int energyuse;
-        public attack(int damage, string name, int energymax, int energyuse, int ENR, SP effect = null)
+        public Attack(int damage, string name, int energymax, int energyuse, int ENR, SP effect = null)
         {
             this.damage = damage;
             this.name = name;

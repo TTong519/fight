@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace fight
 {
-    public abstract class fighter
+    public abstract class Fighter
     {
         public string name;
         public int health;
@@ -15,16 +15,16 @@ namespace fight
         public int attack;
         public int speed;
         public int agility;
-        public attack[] attacks;
-        public fighter(string name, int health, int defence, int attack, int speed, int agility)
+        public Attack[] attacks;
+        public Fighter(string name, int health, int defence, int attack, int speed, int agility)
         {
             this.name = name;
-            this.health = health;
+            this.health = health + 100;
             this.defence = defence;
             this.attack = attack;
             this.speed = speed;
             this.agility = agility;
-            attacks = new attack[3];
+            attacks = new Attack[3];
         }
     }
 }
