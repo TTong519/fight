@@ -11,16 +11,15 @@ namespace fight
         public string name;
         public int damage;
         int energymax;
-        int energy;
+        int energyRegen;
         int energyuse;
-        bool isRabiesCarrier;
-        public attack(int damage, string name, int energymax, int energyuse, int EN)
+        public attack(int damage, string name, int energymax, int energyuse, int ENR, SP effect = null)
         {
             this.damage = damage;
             this.name = name;
             this.energymax = energymax;
             this.energyuse = energyuse;
-            energy = EN;
+            energyRegen = ENR;
         }
     }
 }

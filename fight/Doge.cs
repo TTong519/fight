@@ -14,6 +14,8 @@ namespace fight
             : base(name, health, defence, attack, speed, agility)
         {
             this.hasRabies = hasRabies;
+            attacks[1] = new attack(30 + attack, "Bite", 10, 1, 2);
+            attacks[2]
         }
     }
 }
