@@ -9,16 +9,22 @@ namespace fight
         Game game;
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-            if(game.Turn == Turn.Dog)
+            if (game.Turn == Turn.Start)
             {
-               CatMoves.Enabled = false;
-               DogMoves.Enabled = true;
-            }
-            if(game.Turn == Turn.Cat)
-            {
-                CatMoves.Enabled = true;
-                DogMoves.Enabled = false;
+                if (game.Turn == Turn.Dog)
+                {
+                    CatMoves.Enabled = false;
+                    DogMoves.Enabled = true;
+                }
+                if (game.Turn == Turn.Cat)
+                {
+                    CatMoves.Enabled = true;
+                    DogMoves.Enabled = false;
+                }
+                if (DogHealth.Value == 0 || CatHealth.Value == 0)
+                {
+                    game.Turn = Turn.End;
+                }
             }
         }
 
