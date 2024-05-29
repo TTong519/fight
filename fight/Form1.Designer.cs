@@ -33,7 +33,6 @@
             pictureBox1 = new PictureBox();
             DogMoves = new Panel();
             button3 = new Button();
-            button2 = new Button();
             button1 = new Button();
             pictureBox2 = new PictureBox();
             CatMoves = new Panel();
@@ -47,6 +46,7 @@
             DogHealth = new ProgressBar();
             Announcement = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DogMoves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -80,17 +80,8 @@
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 4;
-            button3.Text = "button3";
+            button3.Text = "Run";
             button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(41, 41);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -98,8 +89,9 @@
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 2;
-            button1.Text = "button1";
+            button1.Text = "Bite";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // pictureBox2
             // 
@@ -127,7 +119,7 @@
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 4;
-            button4.Text = "button4";
+            button4.Text = "Liquid";
             button4.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -136,7 +128,7 @@
             button5.Name = "button5";
             button5.Size = new Size(75, 23);
             button5.TabIndex = 3;
-            button5.Text = "button5";
+            button5.Text = "Bite";
             button5.UseVisualStyleBackColor = true;
             // 
             // button6
@@ -145,7 +137,7 @@
             button6.Name = "button6";
             button6.Size = new Size(75, 23);
             button6.TabIndex = 2;
-            button6.Text = "button6";
+            button6.Text = "Scratch";
             button6.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -215,6 +207,15 @@
             timer1.Interval = 9;
             timer1.Tick += timer1_Tick;
             // 
+            // button2
+            // 
+            button2.Location = new Point(41, 41);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 3;
+            button2.Text = "Growl";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -240,7 +241,6 @@
         private PictureBox pictureBox1;
         private Panel DogMoves;
         private Button button3;
-        private Button button2;
         private Button button1;
         private PictureBox pictureBox2;
         private Panel CatMoves;
@@ -254,5 +254,6 @@
         private System.Windows.Forms.Timer timer1;
         private ProgressBar DogHealth;
         private ProgressBar CatHealth;
+        private Button button2;
     }
 }
