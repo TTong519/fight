@@ -213,7 +213,7 @@
             // 
             // timer1
             // 
-            timer1.Interval = 9;
+            timer1.Interval = 17;
             timer1.Tick += timer1_Tick;
             // 
             // Form1
