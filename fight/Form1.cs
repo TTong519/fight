@@ -55,7 +55,7 @@ namespace fight
         }
 
         private void Bite_Click(object sender, EventArgs e)
-        {
+          {
             if (game.Cat.isWaterBodyActive)
             {
                 game.Cat.health -= (game.Dog.attacks[1].damage/10)*2;
@@ -63,6 +63,14 @@ namespace fight
             else
             {
                 game.Cat.health -= game.Dog.attacks[1].damage;
+            }
+            if(game.Cat.health < 0)
+            {
+                game.Cat.health = 0;
+            }
+            else if(game.Dog.health < 0)
+            {
+                game.Dog.health = 0;
             }
         }
     }
