@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBox1 = new PictureBox();
             DogMoves = new Panel();
-            Run = new Button();
+            Heal = new Button();
             Growl = new Button();
             Bite = new Button();
             pictureBox2 = new PictureBox();
             CatMoves = new Panel();
-            Liquid = new Button();
+            WaterBody = new Button();
             Bite2 = new Button();
             Scratch = new Button();
             label1 = new Label();
@@ -66,7 +66,7 @@
             // 
             // DogMoves
             // 
-            DogMoves.Controls.Add(Run);
+            DogMoves.Controls.Add(Heal);
             DogMoves.Controls.Add(Growl);
             DogMoves.Controls.Add(Bite);
             DogMoves.Location = new Point(645, 350);
@@ -74,14 +74,14 @@
             DogMoves.Size = new Size(155, 100);
             DogMoves.TabIndex = 1;
             // 
-            // Run
+            // Heal
             // 
-            Run.Location = new Point(41, 70);
-            Run.Name = "Run";
-            Run.Size = new Size(75, 23);
-            Run.TabIndex = 4;
-            Run.Text = "Run";
-            Run.UseVisualStyleBackColor = true;
+            Heal.Location = new Point(41, 70);
+            Heal.Name = "Heal";
+            Heal.Size = new Size(75, 23);
+            Heal.TabIndex = 4;
+            Heal.Text = "Heal";
+            Heal.UseVisualStyleBackColor = true;
             // 
             // Growl
             // 
@@ -114,7 +114,7 @@
             // 
             // CatMoves
             // 
-            CatMoves.Controls.Add(Liquid);
+            CatMoves.Controls.Add(WaterBody);
             CatMoves.Controls.Add(Bite2);
             CatMoves.Controls.Add(Scratch);
             CatMoves.Location = new Point(0, 1);
@@ -122,14 +122,14 @@
             CatMoves.Size = new Size(155, 100);
             CatMoves.TabIndex = 5;
             // 
-            // Liquid
+            // WaterBody
             // 
-            Liquid.Location = new Point(41, 70);
-            Liquid.Name = "Liquid";
-            Liquid.Size = new Size(75, 23);
-            Liquid.TabIndex = 4;
-            Liquid.Text = "Liquid";
-            Liquid.UseVisualStyleBackColor = true;
+            WaterBody.Location = new Point(41, 70);
+            WaterBody.Name = "WaterBody";
+            WaterBody.Size = new Size(77, 25);
+            WaterBody.TabIndex = 4;
+            WaterBody.Text = "Water Body";
+            WaterBody.UseVisualStyleBackColor = true;
             // 
             // Bite2
             // 
@@ -240,11 +240,11 @@
 
         private PictureBox pictureBox1;
         private Panel DogMoves;
-        private Button Run;
+        private Button Heal;
         private Button Bite;
         private PictureBox pictureBox2;
         private Panel CatMoves;
-        private Button Liquid;
+        private Button WaterBody;
         private Button Bite2;
         private Button Scratch;
         private Label label1;
