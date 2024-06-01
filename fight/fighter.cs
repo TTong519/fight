@@ -15,7 +15,7 @@ namespace fight
         public int attack;
         public int speed;
         public int agility;
-        public Attack[] attacks;
+        public Move[] attacks;
         public Fighter(string name, int health, int defence, int attack, int speed, int agility)
         {
             this.name = name;
@@ -24,7 +24,7 @@ namespace fight
             this.attack = attack;
             this.speed = speed;
             this.agility = agility;
-            attacks = new Attack[3];
+            attacks = new Move[3];
         }
     }
 }
