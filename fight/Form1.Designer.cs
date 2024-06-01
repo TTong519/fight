@@ -100,7 +100,7 @@
             Bite.TabIndex = 2;
             Bite.Text = "Bite";
             Bite.UseVisualStyleBackColor = true;
-            Bite.Click += button1_Click;
+            Bite.Click += Bite_Click;
             // 
             // pictureBox2
             // 

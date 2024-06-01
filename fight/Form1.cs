@@ -46,7 +46,7 @@ namespace fight
             CatHealth.Value = game.Cat.health;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Bite_Click(object sender, EventArgs e)
         {
 
         }
