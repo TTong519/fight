@@ -46,11 +46,15 @@
             CatHealth = new ProgressBar();
             DogHealth = new ProgressBar();
             timer1 = new System.Windows.Forms.Timer(components);
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DogMoves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             CatMoves.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -175,6 +179,8 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(pictureBox4);
+            panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(CatHealth);
             panel3.Controls.Add(DogHealth);
             panel3.Controls.Add(pictureBox1);
@@ -211,6 +217,26 @@
             timer1.Interval = 17;
             timer1.Tick += timer1_Tick;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(700, 111);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(100, 50);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 10;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(166, 397);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(100, 50);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 11;
+            pictureBox4.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -226,6 +252,8 @@
             CatMoves.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -247,5 +275,7 @@
         private ProgressBar DogHealth;
         private ProgressBar CatHealth;
         private Button Kick;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox3;
     }
 }
