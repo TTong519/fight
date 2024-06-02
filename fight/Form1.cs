@@ -33,12 +33,28 @@ namespace fight
                 {
                     game.Turn = Turn.Dog;
                     isCatTurnUse = false;
+                    if (game.Cat.isinfected)
+                    {
+                        game.Cat.health -= 15;
+                    }
+                    if (game.Dog.hasRabies)
+                    {
+                        game.Dog.health -= 5;
+                    }
                 }
                 if (isDogTurnUse)
                 {
                     game.Turn = Turn.Cat;
                     isDogTurnUse = false;
                     game.Cat.isWaterBodyActive = false;
+                    if (game.Cat.isinfected)
+                    {
+                        game.Cat.health -= 15;
+                    }
+                    if (game.Dog.hasRabies)
+                    {
+                        game.Dog.health -= 5;
+                    }
                 }
                 if (DogHealth.Value == 0 || CatHealth.Value == 0)
                 {
