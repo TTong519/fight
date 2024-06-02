@@ -15,9 +15,9 @@ namespace fight
             CatHealth.Value = game.Cat.health;
             if (game.Turn != Turn.End)
             {
-                if (game.Turn  == Turn.Start)
+                if (game.Turn == Turn.Start)
                 {
-                    game.Turn = Turn.Dog;
+                    game.Turn = Turn.Cat;
                 }
                 if (game.Turn == Turn.Dog)
                 {
@@ -55,23 +55,71 @@ namespace fight
         }
 
         private void Bite_Click(object sender, EventArgs e)
-          {
+        {
             if (game.Cat.isWaterBodyActive)
             {
-                game.Cat.health -= (game.Dog.attacks[1].damage/10)*2;
+                game.Cat.health -= (game.Dog.attacks[0].damage / 10) * 2;
+            }
+            else
+            {
+                game.Cat.health -= game.Dog.attacks[0].damage;
+            }
+            if (game.Cat.health < 0)
+            {
+                game.Cat.health = 0;
+            }
+            if(game.Dog.hasRabies)
+            {
+                game.Cat.isinfected = true;
+            }
+        }
+
+        private void Kick_Click(object sender, EventArgs e)
+        {
+            if (game.Cat.isWaterBodyActive)
+            {
+                game.Cat.health -= (game.Dog.attacks[1].damage / 10) * 2;
             }
             else
             {
                 game.Cat.health -= game.Dog.attacks[1].damage;
             }
-            if(game.Cat.health < 0)
+            if (game.Cat.health < 0)
             {
                 game.Cat.health = 0;
             }
-            else if(game.Dog.health < 0)
+        }
+
+        private void Heal_Click(object sender, EventArgs e)
+        {
+            game.Dog.health -= game.Dog.attacks[2].damage;
+            if (game.Dog.health > DogHealth.Maximum)
+            {
+                game.Dog.health = DogHealth.Maximum;
+            }
+        }
+
+        private void Scratch_Click(object sender, EventArgs e)
+        {
+            game.Dog.health -= game.Cat.attacks[0].damage;
+            if (game.Dog.health < 0)
             {
                 game.Dog.health = 0;
             }
+        }
+
+        private void Bite2_Click(object sender, EventArgs e)
+        {
+            game.Dog.health -= game.Cat.attacks[1].damage;
+            if (game.Dog.health < 0)
+            {
+                game.Dog.health = 0;
+            }
+        }
+
+        private void WaterBody_Click(object sender, EventArgs e)
+        {
+            game.Cat.isWaterBodyActive = true;
         }
     }
 }

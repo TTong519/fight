@@ -33,7 +33,7 @@
             pictureBox1 = new PictureBox();
             DogMoves = new Panel();
             Heal = new Button();
-            Growl = new Button();
+            Kick = new Button();
             Bite = new Button();
             pictureBox2 = new PictureBox();
             CatMoves = new Panel();
@@ -67,7 +67,7 @@
             // DogMoves
             // 
             DogMoves.Controls.Add(Heal);
-            DogMoves.Controls.Add(Growl);
+            DogMoves.Controls.Add(Kick);
             DogMoves.Controls.Add(Bite);
             DogMoves.Location = new Point(645, 350);
             DogMoves.Name = "DogMoves";
@@ -82,15 +82,17 @@
             Heal.TabIndex = 4;
             Heal.Text = "Heal";
             Heal.UseVisualStyleBackColor = true;
+            Heal.Click += Heal_Click;
             // 
-            // Growl
+            // Kick
             // 
-            Growl.Location = new Point(41, 41);
-            Growl.Name = "Growl";
-            Growl.Size = new Size(75, 23);
-            Growl.TabIndex = 3;
-            Growl.Text = "Growl";
-            Growl.UseVisualStyleBackColor = true;
+            Kick.Location = new Point(41, 41);
+            Kick.Name = "Kick";
+            Kick.Size = new Size(75, 23);
+            Kick.TabIndex = 3;
+            Kick.Text = "Kick";
+            Kick.UseVisualStyleBackColor = true;
+            Kick.Click += Kick_Click;
             // 
             // Bite
             // 
@@ -130,6 +132,7 @@
             WaterBody.TabIndex = 4;
             WaterBody.Text = "Water Body";
             WaterBody.UseVisualStyleBackColor = true;
+            WaterBody.Click += WaterBody_Click;
             // 
             // Bite2
             // 
@@ -139,6 +142,7 @@
             Bite2.TabIndex = 3;
             Bite2.Text = "Bite";
             Bite2.UseVisualStyleBackColor = true;
+            Bite2.Click += Bite2_Click;
             // 
             // Scratch
             // 
@@ -148,6 +152,7 @@
             Scratch.TabIndex = 2;
             Scratch.Text = "Scratch";
             Scratch.UseVisualStyleBackColor = true;
+            Scratch.Click += Scratch_Click;
             // 
             // label1
             // 
@@ -255,6 +260,6 @@
         private System.Windows.Forms.Timer timer1;
         private ProgressBar DogHealth;
         private ProgressBar CatHealth;
-        private Button Growl;
+        private Button Kick;
     }
 }
