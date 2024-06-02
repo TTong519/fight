@@ -45,7 +45,6 @@
             panel3 = new Panel();
             CatHealth = new ProgressBar();
             DogHealth = new ProgressBar();
-            Announcement = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DogMoves.SuspendLayout();
@@ -206,16 +205,6 @@
             DogHealth.TabIndex = 8;
             DogHealth.Value = 100;
             // 
-            // Announcement
-            // 
-            Announcement.AutoSize = true;
-            Announcement.Font = new Font("Segoe UI", 30F);
-            Announcement.Location = new Point(262, 190);
-            Announcement.Name = "Announcement";
-            Announcement.Size = new Size(295, 54);
-            Announcement.TabIndex = 9;
-            Announcement.Text = "Announcement";
-            // 
             // timer1
             // 
             timer1.Enabled = true;
@@ -227,7 +216,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(Announcement);
             Controls.Add(panel3);
             Name = "Form1";
             Text = "Form1";
@@ -239,7 +227,6 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -256,7 +243,6 @@
         private Label label1;
         private Label label2;
         private Panel panel3;
-        private Label Announcement;
         private System.Windows.Forms.Timer timer1;
         private ProgressBar DogHealth;
         private ProgressBar CatHealth;

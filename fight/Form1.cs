@@ -17,7 +17,7 @@ namespace fight
             {
                 if (game.Turn == Turn.Start)
                 {
-                    game.Turn = Turn.Cat;
+                    game.Turn = Turn.Dog;
                 }
                 if (game.Turn == Turn.Dog)
                 {
@@ -29,7 +29,17 @@ namespace fight
                     CatMoves.Enabled = true;
                     DogMoves.Enabled = false;
                 }
-
+                if (isCatTurnUse)
+                {
+                    game.Turn = Turn.Dog;
+                    isCatTurnUse = false;
+                }
+                if (isDogTurnUse)
+                {
+                    game.Turn = Turn.Cat;
+                    isDogTurnUse = false;
+                    game.Cat.isWaterBodyActive = false;
+                }
                 if (DogHealth.Value == 0 || CatHealth.Value == 0)
                 {
                     game.Turn = Turn.End;
@@ -72,6 +82,7 @@ namespace fight
             {
                 game.Cat.isinfected = true;
             }
+            isDogTurnUse = true;
         }
 
         private void Kick_Click(object sender, EventArgs e)
@@ -88,6 +99,7 @@ namespace fight
             {
                 game.Cat.health = 0;
             }
+            isDogTurnUse = true;
         }
 
         private void Heal_Click(object sender, EventArgs e)
@@ -97,6 +109,7 @@ namespace fight
             {
                 game.Dog.health = DogHealth.Maximum;
             }
+            isDogTurnUse = true;
         }
 
         private void Scratch_Click(object sender, EventArgs e)
@@ -106,6 +119,7 @@ namespace fight
             {
                 game.Dog.health = 0;
             }
+            isCatTurnUse = true;
         }
 
         private void Bite2_Click(object sender, EventArgs e)
@@ -115,11 +129,13 @@ namespace fight
             {
                 game.Dog.health = 0;
             }
+            isCatTurnUse = true;
         }
 
         private void WaterBody_Click(object sender, EventArgs e)
         {
             game.Cat.isWaterBodyActive = true;
+            isCatTurnUse = true;
         }
     }
 }
