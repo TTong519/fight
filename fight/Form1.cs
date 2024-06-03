@@ -9,15 +9,17 @@ namespace fight
         Game game;
         bool isDogTurnUse;
         bool isCatTurnUse;
+        bool isLast;
+        Random random = new Random();
         private void timer1_Tick(object sender, EventArgs e)
         {
             DogHealth.Value = game.Dog.health;
             CatHealth.Value = game.Cat.health;
-            if(game.Cat.isinfected)
+            if (game.Cat.isinfected)
             {
                 CatRabiesIndicator.BringToFront();
             }
-            if(game.Dog.hasRabies)
+            if (game.Dog.hasRabies)
             {
                 DogRabiesIndicator.BringToFront();
             }
@@ -44,10 +46,18 @@ namespace fight
                     if (game.Cat.isinfected)
                     {
                         game.Cat.health -= 15;
+                        if (game.Cat.health < 0)
+                        {
+                            game.Cat.health = 0;
+                        }
                     }
                     if (game.Dog.hasRabies)
                     {
                         game.Dog.health -= 5;
+                        if (game.Dog.health < 0)
+                        {
+                            game.Dog.health = 0;
+                        }
                     }
                 }
                 if (isDogTurnUse)
@@ -55,13 +65,25 @@ namespace fight
                     game.Turn = Turn.Cat;
                     isDogTurnUse = false;
                     game.Cat.isWaterBodyActive = false;
+                    if (game.Cat.health <= 30)
+                    {
+                        game.Cat.isWaterBodyActive = true;
+                    }
                     if (game.Cat.isinfected)
                     {
                         game.Cat.health -= 15;
+                        if (game.Cat.health < 0)
+                        {
+                            game.Cat.health = 0;
+                        }
                     }
                     if (game.Dog.hasRabies)
                     {
                         game.Dog.health -= 5;
+                        if (game.Dog.health < 0)
+                        {
+                            game.Dog.health = 0;
+                        }
                     }
                 }
                 if (DogHealth.Value == 0 || CatHealth.Value == 0)
@@ -69,11 +91,31 @@ namespace fight
                     game.Turn = Turn.End;
                 }
             }
+            else
+            {
+                panel1.BringToFront();
+                if (DogHealth.Value == 0)
+                {
+                    game.GameWinner = Game.Winner.Cat;
+                }
+                else
+                {
+                    game.GameWinner = Game.Winner.Dog;
+                }
+                switch (game.GameWinner)
+                {
+                    case Game.Winner.Cat:
+                        label3.Text = "CAT wins";
+                        break;
+                    case Game.Winner.Dog:
+                        label3.Text = "DOG wins";
+                        break;
+                }
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Random random = new Random();
             bool temp = false;
             if (random.Next(6) == 1)
             {
@@ -102,7 +144,7 @@ namespace fight
             {
                 game.Cat.health = 0;
             }
-            if(game.Dog.hasRabies)
+            if (game.Dog.hasRabies)
             {
                 game.Cat.isinfected = true;
             }
@@ -160,6 +202,23 @@ namespace fight
         {
             game.Cat.isWaterBodyActive = true;
             isCatTurnUse = true;
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            game.ResetGame(random);
+            panel1.SendToBack();
+            DogHealth.Maximum = game.Dog.health;
+            DogHealth.Value = game.Dog.health;
+            CatHealth.Maximum = game.Cat.health;
+            CatHealth.Value = game.Cat.health;
+            DogRabiesIndicator.SendToBack();
+            CatRabiesIndicator.SendToBack();
         }
     }
 }

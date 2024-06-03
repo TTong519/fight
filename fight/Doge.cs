@@ -16,9 +16,9 @@ namespace fight
         {
             Rabies rabies = new Rabies();
             this.hasRabies = hasRabies;
-            attacks[0] = new Move(20 + attack, "Bite",rabies);
+            attacks[0] = new Move(15 + attack, "Bite",rabies);
             attacks[1] = new Move(5 + attack, "Kick");
-            attacks[2] = new Move(-10, "Heal", null, true);
+            attacks[2] = new Move(-30, "Heal", null, true);
         }
     }
 }

@@ -43,18 +43,22 @@
             label1 = new Label();
             label2 = new Label();
             panel3 = new Panel();
-            DogRabiesIndicator = new PictureBox();
-            CatRabiesIndicator = new PictureBox();
             CatHealth = new ProgressBar();
             DogHealth = new ProgressBar();
+            CatRabiesIndicator = new PictureBox();
+            DogRabiesIndicator = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
+            button1 = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DogMoves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             CatMoves.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DogRabiesIndicator).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CatRabiesIndicator).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DogRabiesIndicator).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -194,26 +198,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(800, 450);
             panel3.TabIndex = 8;
-            // 
-            // DogRabiesIndicator
-            // 
-            DogRabiesIndicator.Image = (Image)resources.GetObject("DogRabiesIndicator.Image");
-            DogRabiesIndicator.Location = new Point(166, 397);
-            DogRabiesIndicator.Name = "DogRabiesIndicator";
-            DogRabiesIndicator.Size = new Size(100, 50);
-            DogRabiesIndicator.SizeMode = PictureBoxSizeMode.StretchImage;
-            DogRabiesIndicator.TabIndex = 11;
-            DogRabiesIndicator.TabStop = false;
-            // 
-            // CatRabiesIndicator
-            // 
-            CatRabiesIndicator.Image = (Image)resources.GetObject("CatRabiesIndicator.Image");
-            CatRabiesIndicator.Location = new Point(700, 111);
-            CatRabiesIndicator.Name = "CatRabiesIndicator";
-            CatRabiesIndicator.Size = new Size(100, 50);
-            CatRabiesIndicator.SizeMode = PictureBoxSizeMode.StretchImage;
-            CatRabiesIndicator.TabIndex = 10;
-            CatRabiesIndicator.TabStop = false;
+            panel3.Paint += panel3_Paint;
             // 
             // CatHealth
             // 
@@ -231,11 +216,60 @@
             DogHealth.TabIndex = 8;
             DogHealth.Value = 100;
             // 
+            // CatRabiesIndicator
+            // 
+            CatRabiesIndicator.Image = (Image)resources.GetObject("CatRabiesIndicator.Image");
+            CatRabiesIndicator.Location = new Point(700, 111);
+            CatRabiesIndicator.Name = "CatRabiesIndicator";
+            CatRabiesIndicator.Size = new Size(100, 50);
+            CatRabiesIndicator.SizeMode = PictureBoxSizeMode.StretchImage;
+            CatRabiesIndicator.TabIndex = 10;
+            CatRabiesIndicator.TabStop = false;
+            // 
+            // DogRabiesIndicator
+            // 
+            DogRabiesIndicator.Image = (Image)resources.GetObject("DogRabiesIndicator.Image");
+            DogRabiesIndicator.Location = new Point(166, 397);
+            DogRabiesIndicator.Name = "DogRabiesIndicator";
+            DogRabiesIndicator.Size = new Size(100, 50);
+            DogRabiesIndicator.SizeMode = PictureBoxSizeMode.StretchImage;
+            DogRabiesIndicator.TabIndex = 11;
+            DogRabiesIndicator.TabStop = false;
+            // 
             // timer1
             // 
             timer1.Enabled = true;
             timer1.Interval = 17;
             timer1.Tick += timer1_Tick;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label3);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 450);
+            panel1.TabIndex = 9;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(346, 176);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "replay";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(346, 144);
+            label3.Name = "label3";
+            label3.Size = new Size(75, 15);
+            label3.TabIndex = 0;
+            label3.Text = "placeholde4r";
             // 
             // Form1
             // 
@@ -243,6 +277,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(panel3);
+            Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -252,8 +287,10 @@
             CatMoves.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DogRabiesIndicator).EndInit();
             ((System.ComponentModel.ISupportInitialize)CatRabiesIndicator).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DogRabiesIndicator).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -277,5 +314,8 @@
         private Button Kick;
         private PictureBox DogRabiesIndicator;
         private PictureBox CatRabiesIndicator;
+        private Panel panel1;
+        private Label label3;
+        private Button button1;
     }
 }
