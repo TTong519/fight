@@ -13,6 +13,14 @@ namespace fight
         {
             DogHealth.Value = game.Dog.health;
             CatHealth.Value = game.Cat.health;
+            if(game.Cat.isinfected)
+            {
+                CatRabiesIndicator.BringToFront();
+            }
+            if(game.Dog.hasRabies)
+            {
+                DogRabiesIndicator.BringToFront();
+            }
             if (game.Turn != Turn.End)
             {
                 if (game.Turn == Turn.Start)

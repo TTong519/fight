@@ -43,18 +43,18 @@
             label1 = new Label();
             label2 = new Label();
             panel3 = new Panel();
+            DogRabiesIndicator = new PictureBox();
+            CatRabiesIndicator = new PictureBox();
             CatHealth = new ProgressBar();
             DogHealth = new ProgressBar();
             timer1 = new System.Windows.Forms.Timer(components);
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DogMoves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             CatMoves.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DogRabiesIndicator).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CatRabiesIndicator).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -179,8 +179,6 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(pictureBox4);
-            panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(CatHealth);
             panel3.Controls.Add(DogHealth);
             panel3.Controls.Add(pictureBox1);
@@ -189,11 +187,33 @@
             panel3.Controls.Add(CatMoves);
             panel3.Controls.Add(pictureBox2);
             panel3.Controls.Add(DogMoves);
+            panel3.Controls.Add(CatRabiesIndicator);
+            panel3.Controls.Add(DogRabiesIndicator);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(800, 450);
             panel3.TabIndex = 8;
+            // 
+            // DogRabiesIndicator
+            // 
+            DogRabiesIndicator.Image = (Image)resources.GetObject("DogRabiesIndicator.Image");
+            DogRabiesIndicator.Location = new Point(166, 397);
+            DogRabiesIndicator.Name = "DogRabiesIndicator";
+            DogRabiesIndicator.Size = new Size(100, 50);
+            DogRabiesIndicator.SizeMode = PictureBoxSizeMode.StretchImage;
+            DogRabiesIndicator.TabIndex = 11;
+            DogRabiesIndicator.TabStop = false;
+            // 
+            // CatRabiesIndicator
+            // 
+            CatRabiesIndicator.Image = (Image)resources.GetObject("CatRabiesIndicator.Image");
+            CatRabiesIndicator.Location = new Point(700, 111);
+            CatRabiesIndicator.Name = "CatRabiesIndicator";
+            CatRabiesIndicator.Size = new Size(100, 50);
+            CatRabiesIndicator.SizeMode = PictureBoxSizeMode.StretchImage;
+            CatRabiesIndicator.TabIndex = 10;
+            CatRabiesIndicator.TabStop = false;
             // 
             // CatHealth
             // 
@@ -217,26 +237,6 @@
             timer1.Interval = 17;
             timer1.Tick += timer1_Tick;
             // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(700, 111);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(100, 50);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 10;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(166, 397);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(100, 50);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 11;
-            pictureBox4.TabStop = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -252,8 +252,8 @@
             CatMoves.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DogRabiesIndicator).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CatRabiesIndicator).EndInit();
             ResumeLayout(false);
         }
 
@@ -275,7 +275,7 @@
         private ProgressBar DogHealth;
         private ProgressBar CatHealth;
         private Button Kick;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
+        private PictureBox DogRabiesIndicator;
+        private PictureBox CatRabiesIndicator;
     }
 }
